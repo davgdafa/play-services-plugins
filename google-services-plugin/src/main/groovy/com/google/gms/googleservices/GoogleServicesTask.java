@@ -55,9 +55,10 @@ public class GoogleServicesTask extends DefaultTask {
   // "aBunchOfFlavors/release"
   // "flavor/debug"
   // "test"
+  // "UppercaseFlavor/debug"
   // And here is an example with the capture groups in [square brackets]
-  // [a][BunchOfFlavors]/[release]
-  public final static Pattern VARIANT_PATTERN = Pattern.compile("(?:([^\\p{javaUpperCase}]+)((?:\\p{javaUpperCase}[^\\p{javaUpperCase}]*)*)\\/)?([^\\/]*)");
+  // [aBunchOfFlavors]/[release]
+  public final static Pattern VARIANT_PATTERN = Pattern.compile("(?:([\p{Lower}\p{Upper}]+)((?:\p{javaUpperCase}[^\p{javaUpperCase}]*)*)/)?([^/]*)");
   // Some example of things that match this pattern are:
   // "TestTheFlavor"
   // "FlavorsOfTheRainbow"
